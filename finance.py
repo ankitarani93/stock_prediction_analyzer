@@ -53,6 +53,7 @@ for stock in stocks:
     # dd/mm/YY H:M:S
     dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
     print("date_time =", dt_string)
+    print("date_time =", dt_string)
     variable_table(symbol, currentPrice, dt_string)
 
     #static_table(symbol,shortName,sector,country)
