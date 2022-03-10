@@ -37,25 +37,30 @@ def variable_table(v_symbol,v_currentPrice,v_dt_string):
     mydb.commit()
 
 
-stocks = ["TCS.NS", "TATASTEEL.NS", "TATAMOTORS.NS", "TITAN.NS", "TATACHEM.NS", "TATAPOWER.NS", "INDHOTEL.NS", "TATACONSUM.NS", "TATACOMM.NS", "VOLTAS.NS", "TRENT.NS", "TATASTLLP.NS", "TATAINVEST.NS", "TATAMETALI.NS", "TATAELXSI.NS", "NELCO.NS", "TATACOFFEE.NS", "TTML.NS"]
-for stock in stocks:
-    # Optimize below line
-    info = yf.Ticker(stock).info
+stocks_list = ["TCS.NS", "TATASTEEL.NS", "TATAMOTORS.NS", "TITAN.NS", "TATACHEM.NS", "TATAPOWER.NS", "INDHOTEL.NS", "TATACONSUM.NS", "TATACOMM.NS", "VOLTAS.NS", "TRENT.NS", "TATASTLLP.NS", "TATAINVEST.NS", "TATAMETALI.NS", "TATAELXSI.NS", "NELCO.NS", "TATACOFFEE.NS", "TTML.NS"]
 
-    symbol = info.get('symbol')
-    shortName = info.get('shortName')
-    sector = info.get('sector')
-    country = info.get('country')
-    currentPrice = info.get('currentPrice')
+# tickers = yf.Tickers(stocks_list)
+# for stock in stocks_list:
+#     print(tickers.tickers[stock.upper()].info)
+tickers = yf.Tickers(['MSFT','GOOG','AAPL'])
+print(tickers.tickers['MSFT'].info)
+print(tickers.tickers['GOOG'].info)
+#print(tickers.tickers.get('MSFT').info)
 
-    # datetime object containing current date and time
-    now = datetime.now()
-    # dd/mm/YY H:M:S
-    dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
-    print("date_time =", dt_string)
-    print("date_time =", dt_string)
-    print("date_time =", dt_string)
-    variable_table(symbol, currentPrice, dt_string)
+# symbol = info.get('symbol')
+# shortName = info.get('shortName')
+# sector = info.get('sector')
+# country = info.get('country')
+# currentPrice = info.get('currentPrice')
+#
+# # datetime object containing current date and time
+# now = datetime.now()
+# # dd/mm/YY H:M:S
+# dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
+# print("date_time =", dt_string)
+# print("date_time =", dt_string)
+# print("date_time =", dt_string)
+# variable_table(symbol, currentPrice, dt_string)
 
     #static_table(symbol,shortName,sector,country)
 
