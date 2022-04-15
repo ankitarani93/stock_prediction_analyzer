@@ -38,7 +38,6 @@ def variable_table(v_symbol,v_closePrice,v_Datetime):
     mycursor.execute("INSERT INTO stock_details_interval_minute (symbol, closePrice, Date_time) VALUES (%s,%s,%s)",(v_symbol, v_closePrice, v_Datetime))
     mydb.commit()
 
-
 #stocks_list = ["TCS.NS", "TATASTEEL.NS", "TATAMOTORS.NS", "TITAN.NS", "TATACHEM.NS", "TATAPOWER.NS", "INDHOTEL.NS", "TATACONSUM.NS", "TATACOMM.NS", "VOLTAS.NS", "TRENT.NS", "TATASTLLP.NS", "TATAINVEST.NS", "TATAMETALI.NS", "TATAELXSI.NS", "NELCO.NS", "TATACOFFEE.NS", "TTML.NS"]
 stocks_list = ["TCS.NS","TATASTEEL.NS"]
 

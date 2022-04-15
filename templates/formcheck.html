@@ -5,9 +5,17 @@
     <title>test</title>
 </head>
 <body>
-<form action="{{ url_for("findstockname")}}" method="post">
-    <label for="symbol" >Stock Name:</label><br>
-  <input type="button" id="symbol" name="Stockname" placeholder="StockName"><br><br>
-  <input type="submit">
+<form action="{{ url_for("search")}}" method="POST">
+
+<select name="stock_drop_down" class="input">
+    {% for stock_symbol in stocks_list %}
+        <option value={{stock_symbol}} >{{stock_symbol}}</option>"
+    {% endfor %}
+</select>
+<br> <br>
+<input type= "submit" name="submit_button" value="Check Price">
+<input type= "submit" name="submit_button" value="Check RSI">
+</form>
+
 </body>
 </html>
